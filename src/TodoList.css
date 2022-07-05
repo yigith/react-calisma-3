@@ -1,3 +1,62 @@
 .TodoList {
-  margin: 1rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 400px;
+}
+
+.App-gece .TodoList {
+  background-color: rgb(74, 79, 107);
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 8px 24px;
+}
+
+.metin-kutu {
+  padding: .5rem;
+  border: 1px solid gainsboro;
+}
+
+.dugme {
+  padding: .5rem;
+  border: 1px solid gainsboro;
+  cursor: pointer;
+}
+
+.liste {
+  margin-top: 1rem;
+}
+
+.liste-oge {
+  display: flex;
+  margin: .5rem 0;
+  padding: .5rem;
+}
+
+.liste-oge:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+.liste-oge:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+.App-gece .liste-oge:nth-child(odd) {
+  background-color: #5b74ff;
+}
+
+.App-gece .liste-oge:nth-child(even) {
+  background-color: #8a9cff;
+}
+
+.liste-baslik {
+  margin-right: auto;
+}
+
+.liste-sil {
+  display: inline-block;
+  opacity: .5;
+  transform: scale(1.5);
+}
+
+.liste-sil:hover {
+  opacity: 1;
 }
