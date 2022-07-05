@@ -6,12 +6,7 @@ export class TodoList extends Component {
     super(props);
     this.state = {
       baslik: "",
-      yapilacaklar: [
-        { yapildiMi: false, baslik: "React Çalış" },
-        { yapildiMi: false, baslik: "Konsere Git" },
-        { yapildiMi: true, baslik: "Kahve İç" },
-        { yapildiMi: true, baslik: "İlacını Al" }
-      ]
+      yapilacaklar: oku()
     };
     this.ekle = this.ekle.bind(this);
   }
@@ -49,11 +44,12 @@ export class TodoList extends Component {
   }
 
   render() {
+    kaydet(this.state.yapilacaklar);
     return (
       <div className="TodoList">
         <h1>Yapacaklarım</h1>
         <form onSubmit={this.ekle}>
-          <input className="metin-kutu" name="okul" type="text" placeholder="Ne yapacaksın?"
+          <input className="metin-kutu" type="text" placeholder="Ne yapacaksın?"
             value={this.state.baslik} required
             onChange={(e) => this.setState({ baslik: e.target.value })} />{" "}
           <button className="dugme">Ekle</button>
@@ -75,9 +71,27 @@ export class TodoList extends Component {
   }
 }
 
+function kaydet(nesne) {
+  localStorage["veri"] = JSON.stringify(nesne);
+}
+
+function oku() {
+  const str = localStorage["veri"];
+  return str ? JSON.parse(str) : ornekVeriler();
+}
+
 function sirala(liste) {
   liste.sort((a, b) => a.yapildiMi - b.yapildiMi);
   return liste;
+}
+
+function ornekVeriler() {
+  return [
+    { yapildiMi: false, baslik: "React Çalış" },
+    { yapildiMi: false, baslik: "Konsere Git" },
+    { yapildiMi: true, baslik: "Kahve İç" },
+    { yapildiMi: true, baslik: "İlacını Al" }
+  ];
 }
 
 export default TodoList;

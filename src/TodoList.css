@@ -31,30 +31,36 @@
   padding: .5rem;
 }
 
-.liste-oge:nth-child(even) {
-  background-color: #e0e0e0;
+.liste-oge:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.liste-oge:nth-child(odd) {
-  background-color: #f3f3f3;
+.liste-oge:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .App-gece .liste-oge:nth-child(odd) {
-  background-color: #5b74ff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .App-gece .liste-oge:nth-child(even) {
-  background-color: #8a9cff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.liste-durum {
+  transform: scale(1.4);
+  margin-right: .6rem;
 }
 
 .liste-baslik {
   margin-right: auto;
+  opacity: .9;
 }
 
 .liste-sil {
   display: inline-block;
   opacity: .5;
-  transform: scale(1.5);
+  transform: scale(1.75);
 }
 
 .liste-sil:hover {
